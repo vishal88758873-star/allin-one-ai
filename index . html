@@ -1,2 +1,281 @@
-<!DOCTYPE html> <head>⁠
-<title>All In One Al</title>
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All in One AI</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b1020;
+    color: white;
+}
+
+header {
+    padding: 22px 16px;
+    text-align: center;
+    background: #151d35;
+    border-bottom: 1px solid #303957;
+}
+
+header h1 {
+    color: #8b9dff;
+    margin: 0 0 10px;
+    font-size: 28px;
+}
+
+header p {
+    color: #cbd5e1;
+    margin: 0;
+}
+
+.container {
+    max-width: 850px;
+    margin: auto;
+    padding: 20px 15px;
+}
+
+.hero {
+    text-align: center;
+    padding: 25px 10px;
+}
+
+.hero h2 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+.search {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #465174;
+    background: #151d35;
+    color: white;
+    font-size: 16px;
+    margin: 10px 0 22px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.card {
+    background: #151d35;
+    border: 1px solid #303957;
+    border-radius: 15px;
+    padding: 18px 12px;
+}
+
+.icon {
+    font-size: 30px;
+}
+
+.card h3 {
+    margin: 12px 0 8px;
+    font-size: 17px;
+}
+
+.card p {
+    color: #cbd5e1;
+    font-size: 13px;
+    line-height: 1.5;
+    min-height: 38px;
+}
+
+button {
+    width: 100%;
+    padding: 11px 8px;
+    border: none;
+    border-radius: 9px;
+    background: #6578ff;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+button:active {
+    opacity: 0.8;
+}
+
+#message {
+    margin-top: 20px;
+    padding: 14px;
+    background: #151d35;
+    border-radius: 12px;
+    color: #dbe4ff;
+    line-height: 1.6;
+    display: none;
+    overflow-wrap: anywhere;
+}
+
+footer {
+    text-align: center;
+    padding: 25px 12px;
+    color: #aab4d0;
+    font-size: 13px;
+}
+
+@media (max-width: 350px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>✨ All in One AI</h1>
+    <p>All Your AI Tools, One Place</p>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <h2>Welcome to AI Studio 🚀</h2>
+        <p>
+            Explore AI tools for creativity, photos,
+            videos, writing and more.
+        </p>
+    </section>
+
+    <input
+        class="search"
+        id="search"
+        type="search"
+        placeholder="🔍 Search AI tools..."
+        aria-label="Search AI tools"
+    >
+
+    <section class="grid" id="tools">
+
+        <article class="card" data-name="image photo generator">
+            <div class="icon">🎨</div>
+            <h3>AI Image</h3>
+            <p>Create images from your ideas and prompts.</p>
+            <button onclick="showTool('AI Image Generator')">
+                Open Tool
+            </button>
+        </article>
+
+        <article class="card" data-name="video generator">
+            <div class="icon">🎬</div>
+            <h3>AI Video</h3>
+            <p>Explore AI video creation tools.</p>
+            <button onclick="showTool('AI Video Generator')">
+                Open Tool
+            </button>
+        </article>
+
+        <article class="card" data-name="photo editor background">
+            <div class="icon">🖼️</div>
+            <h3>Photo Editor</h3>
+            <p>Find tools for editing photos and backgrounds.</p>
+            <button onclick="showTool('AI Photo Editor')">
+                Open Tool
+            </button>
+        </article>
+
+        <article class="card" data-name="chat chatbot">
+            <div class="icon">💬</div>
+            <h3>AI Chat</h3>
+            <p>Explore AI assistants and chat tools.</p>
+            <button onclick="showTool('AI Chat')">
+                Open Tool
+            </button>
+        </article>
+
+        <article class="card" data-name="voice audio">
+            <div class="icon">🎙️</div>
+            <h3>AI Voice</h3>
+            <p>Explore voice and audio generation tools.</p>
+            <button onclick="showTool('AI Voice Generator')">
+                Open Tool
+            </button>
+        </article>
+
+        <article class="card" data-name="prompt writing">
+            <div class="icon">✍️</div>
+            <h3>Prompt Studio</h3>
+            <p>Prepare prompts for your AI creations.</p>
+            <button onclick="showTool('AI Prompt Studio')">
+                Open Tool
+            </button>
+        </article>
+
+        <article class="card" data-name="logo design">
+            <div class="icon">💎</div>
+            <h3>AI Logo</h3>
+            <p>Explore ideas for logos and graphic design.</p>
+            <button onclick="showTool('AI Logo Designer')">
+                Open Tool
+            </button>
+        </article>
+
+        <article class="card" data-name="upscale enhance 8k">
+            <div class="icon">⚡</div>
+            <h3>AI Enhance</h3>
+            <p>Explore image enhancement and upscaling.</p>
+            <button onclick="showTool('AI Image Enhancer')">
+                Open Tool
+            </button>
+        </article>
+
+    </section>
+
+    <div id="message" role="status" aria-live="polite"></div>
+
+</main>
+
+<footer>
+    <p>All in One AI © 2026</p>
+    <p>One place for your AI creativity.</p>
+</footer>
+
+<script>
+function showTool(name) {
+    const message = document.getElementById("message");
+
+    message.style.display = "block";
+    message.textContent =
+        name + " selected. AI service integration is needed " +
+        "to use this tool. More tools coming soon!";
+
+    message.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+    });
+}
+
+document.getElementById("search").addEventListener("input", function() {
+    const query = this.value.toLowerCase().trim();
+
+    document.querySelectorAll(".card").forEach(function(card) {
+        const name = card.dataset.name.toLowerCase();
+        const text = card.innerText.toLowerCase();
+
+        card.style.display =
+            name.includes(query) || text.includes(query)
+                ? ""
+                : "none";
+    });
+});
+</script>
+
+</body>
+</html>
